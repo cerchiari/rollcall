@@ -1,0 +1,22 @@
+<h1>Editing Course #<%= @course.id %></h1>
+
+<%= form_tag(course_url(@course), method: 'patch') do %>
+  <div>
+    <%= label_tag :department %><br />
+    <%= text_field_tag :department, @course.department %>
+  </div>
+
+  <div>
+    <%= label_tag :number %><br />
+    <%= text_field_tag :number, @course.number %>
+  </div>
+
+  <div>
+    <%= label_tag :title %><br />
+    <%= text_field_tag :title, @course.title %>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Course" %>
+  </div>
+<% end %>

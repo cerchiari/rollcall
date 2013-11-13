@@ -1,0 +1,28 @@
+<h1>Attendances</h1>
+
+<p><%= link_to 'Add a New Attendance', new_attendance_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Meeting</th>
+      <th>Student</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @attendances.each do |attendance| %>
+    <tr>
+      <td><%= attendance.meeting_id %></td>
+      <td><%= attendance.student_id %></td>
+      <td><%= link_to 'Show', attendance_url(attendance) %></td>
+      <td><%= link_to 'Edit', edit_attendance_url(attendance) %></td>
+      <td><%= link_to 'Destroy', attendance_url(attendance), method: 'delete', data: { confirm: "Do you really want to delete this attendance?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

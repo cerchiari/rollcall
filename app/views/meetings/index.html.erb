@@ -1,0 +1,28 @@
+<h1>Meetings</h1>
+
+<p><%= link_to 'Add a New Meeting', new_meeting_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Held on</th>
+      <th>Course</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @meetings.each do |meeting| %>
+    <tr>
+      <td><%= meeting.held_on %></td>
+      <td><%= meeting.course_id %></td>
+      <td><%= link_to 'Show', meeting_url(meeting) %></td>
+      <td><%= link_to 'Edit', edit_meeting_url(meeting) %></td>
+      <td><%= link_to 'Destroy', meeting_url(meeting), method: 'delete', data: { confirm: "Do you really want to delete this meeting?" } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

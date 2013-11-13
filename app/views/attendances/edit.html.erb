@@ -1,0 +1,17 @@
+<h1>Editing Attendance #<%= @attendance.id %></h1>
+
+<%= form_tag(attendance_url(@attendance), method: 'patch') do %>
+  <div>
+    <%= label_tag :meeting_id %><br />
+    <%= number_field_tag :meeting_id, @attendance.meeting_id %>
+  </div>
+
+  <div>
+    <%= label_tag :student_id %><br />
+    <%= number_field_tag :student_id, @attendance.student_id %>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Attendance" %>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<h1>Editing Meeting #<%= @meeting.id %></h1>
+
+<%= form_tag(meeting_url(@meeting), method: 'patch') do %>
+  <div>
+    <%= label_tag :held_on %><br />
+    <%= text_field_tag :held_on, @meeting.held_on %>
+  </div>
+
+  <div>
+    <%= label_tag :course_id %><br />
+
+    <select name= <%= :course_id %> >
+       <% @courses.each do |course| %>
+            <option value=<%= course.id %> ><%= course.title %></option>
+        <% end %>
+    </select>
+  </div>
+
+  <div>
+    <%= submit_tag "Update Meeting" %>
+  </div>
+<% end %>
